@@ -1,0 +1,445 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Register Advertiser</title>
+     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" /> -->
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+ <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+      <style type="text/css">
+       body{
+
+          font-family: 'Poppins' !important;
+          font-style: normal;
+           font-weight: 400;
+           font-size: 12px !important;
+         src: url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJnecmNE.woff2) format('woff2');
+         unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+
+       }
+        h2{
+
+          color: orange !important;
+          font-weight: bold;
+          margin-top: 2rem;
+        
+
+        }
+        form{
+            padding: 10px !important;
+        }
+        .logo{
+        
+            background-color: orange;
+            margin-top: 1.5rem;
+        }
+        label{
+          font-weight: 400;
+          font-weight: bolder;
+        }
+     
+        .success{
+          color: green;
+
+        }
+
+        .danger{
+          color: red;
+        }
+      
+      @media screen and (max-width: 600px){
+        .col{
+          width: 100%;
+        }
+      }
+      input{
+        font-size: 12px !important;
+      }
+
+
+    </style>
+
+<div class="container">
+    <div class="row">
+       <div class="col col-6 col-md-4 col-lg-6" style="margin-top: 5rem !important;">
+
+    <img id="image" src="https://img.freepik.com/premium-vector/laptop-with-marketing-clipart_24908-68635.jpg" alt="">
+   
+          </div>
+
+  <div class="col col-6 col-md-4 col-lg-6">
+ <div class="logo w-95 shadow-lg p-3 bg-body rounded">
+    <div class="container text-center w-95">
+    <img src="../assets/img/s-removebg-preview.png" width="160" height="100">
+ </div>     
+</div>
+ <form class="shadow-lg p-3 mb-5 bg-body rounded w-95 needs-validation">
+  <!-- Name input -->
+  <div class="row">
+    <div class="col-sm">
+  <div class="form-outline mb-1">
+    <label class="form-label" for="form4Example1">First Name</label>
+    <input type="text" id="first_name" class="form-control " required />
+  </div>
+  </div>
+
+      <div class="col-sm">
+  <div class="form-outline mb-1">
+    <label class="form-label" for="form4Example1">Second Name</label>
+    <input type="text" id="second_name" class="form-control " required />
+  </div>
+  </div>
+
+
+
+  </div>
+ 
+
+  <!-- Email input -->
+
+  <div class="row">
+          <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Work Email</label>
+
+                      <input type="email" id="email" class="form-control" required/>
+       </div>
+    </div>
+
+
+
+       <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Work Phone</label>
+
+                      <input type="text" id="phone" class="form-control" required/>
+       </div>
+    </div>
+
+
+    
+ 
+  </div>
+
+
+    <div class="row">
+          <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Company Name</label>
+
+                      <input type="text" id="company" class="form-control" required/>
+       </div>
+    </div>
+
+
+
+       <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Company Url</label>
+                
+                      <input type="text" id="url" class="form-control" placeholder="https://example.com" required/>
+                    <p id="answer"></p> <button id="check_validation" type="button" class="btn btn-primary"
+        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+  Validate
+</button>
+       </div>
+    </div>
+
+
+    <script type="text/javascript">
+       var check_button = document.getElementById('check_validation');
+       var answer = document.getElementById('answer');
+
+       check_button.addEventListener('click', checkURL);
+
+       function checkURL(){
+        var webUrl = document.getElementById('url').value;
+        var ValidText = `Your URL is Valid:URL=`;
+
+         const newUrl = new URL(`${webUrl}`);
+
+         console.log(newUrl);
+
+         var display =`<span class="success">Valid URL</span>`;
+         var display2= `<span class="danger">Invalid URL</span>`;
+
+         if (newUrl.protocol === 'http:' || newUrl.protocol === 'https:') {
+          
+            answer.innerHTML=display;
+
+            swal({
+              title:'Verified',
+              text: ValidText + newUrl.hostname,
+              icon:'success'
+            })
+
+         }
+
+         if (!newUrl) {
+            answer.innerHTML= display;
+            alert("invalid Url")
+
+        }
+         
+       }
+    </script>
+
+
+    
+  
+  </div>
+
+
+
+
+    <div class="row">
+          <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Country</label>
+
+                      <input type="text" id="country" class="form-control" required/>
+       </div>
+    </div>
+
+
+
+       <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Area of Interest</label>
+
+                      <input type="text" id="Interest" class="form-control" required/>
+       </div>
+    </div>
+
+
+    
+ 
+  </div>
+
+
+
+    <div class="row">
+          <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Annual Online Revenue</label>
+
+                      <input type="text" id="revenue" class="form-control" required/>
+       </div>
+    </div>
+
+
+
+       <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Industry</label>
+
+                      <input type="text" id="industry" class="form-control" required/>
+       </div>
+    </div>
+
+
+    
+ 
+  </div>
+
+    <div class="row">
+          <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Password</label>
+
+                      <input type="password" id="password" class="form-control" required/>
+       </div>
+    </div>
+
+
+
+       <div class="col-sm">
+                    <div class="form-outline mb-1">
+                          <label class="form-label" for="form4Example2">Confirm Password</label>
+
+                      <input type="password" id="c_password" class="form-control" required/>
+       </div>
+    </div>
+
+
+    
+ 
+  </div>
+  
+  <!-- Checkbox -->
+
+ <div class="container text-center">
+  <!-- Submit button -->
+  <button type="submit" id="register" class="btn btn-primary  btn-block">Register</button>
+
+</div>
+</form>
+
+ 
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+ <script type="text/javascript">
+    
+
+
+
+
+    let image = document.getElementById('image');
+
+    let images = ['https://img.freepik.com/premium-vector/modern-pharmacy-composition_1284-67701.jpg',
+
+                'https://img.freepik.com/premium-vector/isometric-style-illustration-about-financial-investment-business-analysis_529804-381.jpg', 
+
+                  'https://img.freepik.com/premium-vector/isometric-style-illustration-about-business-strategy-ideas-business-growth_529804-302.jpg'];
+
+    setInterval(function() {
+    let random =Math.floor(Math.random()* 3);
+    image.src = images[random];
+    }, 10000)
+ </script>
+
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDEqFJs-S900pexPUDeiPc-7aRrMHhw6Ww",
+  authDomain: "e-store-a05b8.firebaseapp.com",
+  databaseURL: "https://e-store-a05b8.firebaseio.com",
+  projectId: "e-store-a05b8",
+  storageBucket: "e-store-a05b8.appspot.com",
+  messagingSenderId: "929059030724",
+  appId: "1:929059030724:web:307218980d0d2fd30b2b91",
+  measurementId: "G-46E6M68KTM"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+  const auth = getAuth(app);
+
+  
+
+
+
+
+const db = getDatabase(app);
+const postListFeedbacks = ref(db, 'advertisers');
+
+const newPostFeedbacks = push(postListFeedbacks);
+
+
+document.getElementById('register').addEventListener('click', function(e) {
+  e.preventDefault();
+
+ var first_name = document.getElementById('first_name').value;
+ var second_name = document.getElementById('second_name').value;
+
+ var email = document.getElementById('email').value;
+ var password = document.getElementById('password').value;
+ var phone = document.getElementById('phone').value;
+ var country = document.getElementById('country').value;
+ var company = document.getElementById('company').value;
+ var url = document.getElementById('url').value;
+ var industry = document.getElementById('industry').value;
+ var area_of_interest = document.getElementById('Interest').value;
+ var revenue = document.getElementById('revenue').value;
+ var date = new Date().toString();
+
+ createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+   const user = userCredential.user;
+
+   localStorage.setItem('username', email);
+
+
+   set(newPostFeedbacks,{
+
+     FirstName: first_name,
+     SecondName: second_name,
+     Email: email,
+     Phone: phone,
+     Country: country,
+     Company: company,
+     URL: url,
+     Industry: industry,
+     Aoi: area_of_interest,
+     Revenue: revenue,
+     Date: date
+
+   });
+   
+
+
+    swal({
+        title:"Welcome To AllactionAds!",
+        text:"Advertiser Registered Successfully",
+        icon:"success",
+        timer:2000,
+        button:"Ok",
+      })
+
+
+      .then(() => {
+        
+        window.location = '../';
+})
+   
+  
+
+
+
+   
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    
+     swal({
+        title:"Error!",
+        text:"Please Fill All Fields",
+        icon:"info",
+        button:"Ok",
+      })
+
+  });
+
+
+
+
+});
+ 
+</script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>AllactionsAds || CreateAd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+
+    <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<style type="text/css">
+    body{
+        font-family: 'Poppins' !important;
+    }
+    h4{
+        font-size: 11px !important;
+    }
+
+    iconify-icon {
+        font-size: 60px;
+        margin-top:2rem;
+    }
+  
+</style>
+
+<body onload="getLocation();">
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left active">
+                <a href="index.html" class="logo logo-normal">
+                    <img src="../../assets/img/logo-removebg-preview.png" alt="">
+                </a>
+                <a href="index.html" class="logo logo-white">
+                    <img src="../../assets/img/logo-white.png" alt="">
+                </a>
+                <a href="index.html" class="logo-small">
+                    <img src="../../assets/img/logo-small.png" alt="">
+                </a>
+                <a id="toggle_btn" href="javascript:void(0);">
+                </a>
+            </div>
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+
+            <ul class="nav user-menu">
+
+                <li class="nav-item">
+                    <div class="top-nav-search">
+                        <a href="javascript:void(0);" class="responsive-search">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <form action="#">
+                            <div class="searchinputs">
+                                <input type="text" placeholder="Search Here ...">
+                                <div class="search-addon">
+                                    <span><img src="../../assets/img/icons/closes.svg" alt="img"></span>
+                                </div>
+                            </div>
+                            <a class="btn" id="searchdiv"><img src="../../assets/img/icons/search.svg" alt="img"></a>
+                        </form>
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown has-arrow flag-nav">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);"
+                        role="button">
+                        <img src="../../assets/img/flags/us1.png" alt="" height="20">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/us.png" alt="" height="16"> English
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/fr.png" alt="" height="16"> French
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/es.png" alt="" height="16"> Spanish
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/de.png" alt="" height="16"> German
+                        </a>
+                    </div>
+                </li>
+
+
+             
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                        <span class="user-img"><img src="../../assets/img/profiles/avator1.jpg" alt="">
+                            <span class="status online"></span></span>
+                    </a>
+                    <div class="dropdown-menu menu-drop-user">
+                        <div class="profilename">
+                            <div class="profileset">
+                                <span class="user-img"><img src="../../assets/img/profiles/avator1.jpg" alt="">
+                                    <span class="status online"></span></span>
+                                <div class="profilesets">
+                                    <h6>John Doe</h6>
+                                    <h5>Admin</h5>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+                            <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My
+                                Profile</a>
+                            <a class="dropdown-item" href="generalsettings.html"><i class="me-2"
+                                    data-feather="settings"></i>Settings</a>
+                            <hr class="m-0">
+                            <a class="dropdown-item logout pb-0" href="signin.html"><img
+                                    src="../../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="dropdown mobile-user-menu">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="generalsettings.html">Settings</a>
+                    <a class="dropdown-item" href="signin.html">Logout</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="submenu">
+                            <a href="../../dashboard"><i class="fa fa-tachometer"></i><span>
+                                    Go To Dashboard</span> </a>
+                        </li>
+                     
+                 
+
+
+                     
+                     
+                     
+                      
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <div class="page-wrapper">
+            <div class="content">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h3>Create Text Ads</h3>
+                     
+                    </div>
+                </div>
+
+ 
+
+
+            <form><div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h5>General Ad Information</h5>
+                              
+                            </div>
+                        </div>
+                        <div class="row">
+                       
+                           
+                       
+                              <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ad Headline 1</label>
+                                    <input type="text" id="ad_headline_one" required>
+                                </div>
+                            </div>
+                               <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ad Headline 2</label>
+                                    <input type="text" id="ad_headline_two" required>
+                                </div>
+                            </div>
+                             
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ad Headline 3</label>
+                                    <input type="text" id="ad_headline_three" required>
+                                </div>
+                            </div>
+
+                         <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Key word</label>
+                                  <select class="form-select form-select-sm" id="ad_category" aria-label=".form-select-sm example">
+                                     <option selected>Choose</option>
+                                             <option value="Technology">Technology</option>
+                                              <option value="Housing">Housing</option>
+                                              <option value="Entertainment">Entertainment</option>
+                                             <option value="Entertainment">Betting</option>
+                                             <option value="crytpocurrency">Cryptocurrency</option>
+                                             <option value="beauty">Beauty</option>
+                                             <option value="health">Health</option>
+
+                                </select>
+                                </div>
+                            </div>
+
+
+                        
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Campaign Name</label>
+                                    <input type="text" id="ad_name" required>
+                                </div>
+                            </div>
+
+                      
+                        
+                           
+                          
+
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" id="ad_company" required>
+                                </div>
+                            </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Website URL</label>
+                                    <input type="text" id="ad_url" required>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Campaign Goal</label>
+                                  <select class="form-select form-select-sm" id="ad_goal" aria-label=".form-select-sm example">
+                                     <option selected>Choose</option>
+                                             <option value="Website Traffic">Website Traffic</option>
+                                              <option value="Leads">Leads</option>
+                                              <option value="Sales">Sales</option>
+                                          
+                                </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Ad Description</label>
+                                    <textarea class="form-control" id="ad_description_one" required></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Ad Description 2</label>
+                                    <textarea class="form-control" id="ad_description_two" required></textarea>
+                                </div>
+                            </div>
+                            
+                            
+                       
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Bidding Strategy</label>
+                                    <select class="form-select form-select-sm" id="ad_bidding" aria-label=".form-select-sm example">
+                                     <option selected>Choose</option>
+                                             <option  value="CPC">Cost Per Click (CPC)</option>
+                                              <option value="CPM">Cost Per Impression (CPM)</option>
+                                              <option value="vCPM">Cost Per 1000/views</option>
+                                </select>
+                                </div>
+                            </div>
+                               <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group" id="ipaddress">
+                          
+                                    
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group" id="country">
+                            
+                                    
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group" id="adbudget">
+                          
+                                    
+
+                                </div>
+                            </div>
+                           
+                            
+                   
+                   
+
+                            
+                            <div class="col-lg-12">
+                                <a id="submit" class="btn btn-submit me-2">Submit</a>
+                                <a onclick="cancelRequest();" class="btn btn-cancel">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</form>
+            </div>
+        </div>
+    </div>
+ 
+
+<script type="text/javascript">
+    function getLocation(){
+  fetch('https://api.db-ip.com/v2/free/self')
+      .then((res) => res.json())
+      .then((data) => {
+
+      console.log(data);
+        let output = `
+        <label>Advertising Country</label>
+        <input type="text" value="${data.countryName}" id="ad_country">`;
+      
+        document.getElementById('country').innerHTML = output;
+
+
+        let output2 = `
+           <label>IP Address</label>
+        <input type="text" value="${data.ipAddress}" id="ad_language">`;
+
+        ;
+         document.getElementById('ipaddress').innerHTML = output2;
+      })
+}
+
+function cancelRequest(){
+
+
+
+location.reload();
+}
+
+var cpc = document.getElementById('ad_bidding');
+var adbudget = document.getElementById('adbudget');
+
+cpc.addEventListener("change", openList);
+
+function openList(){
+    var display= ` <label>Budget</label>
+        <input type="text" value="$1000" id="ad_budget">`;
+
+   adbudget.innerHTML= display;       
+
+
+}
+
+
+
+
+
+
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getDatabase, ref, set, push, update} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+import { getStorage, ref as sRef, uploadBytesResumable,getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDEqFJs-S900pexPUDeiPc-7aRrMHhw6Ww",
+  authDomain: "e-store-a05b8.firebaseapp.com",
+  databaseURL: "https://e-store-a05b8.firebaseio.com",
+  projectId: "e-store-a05b8",
+  storageBucket: "e-store-a05b8.appspot.com",
+  messagingSenderId: "929059030724",
+  appId: "1:929059030724:web:307218980d0d2fd30b2b91",
+  measurementId: "G-46E6M68KTM"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+const storage = getStorage(app);
+
+
+
+var submit = document.getElementById('submit');
+
+const advertisementRef = ref(db, 'Textadvertisements');
+const newPostAdvertisements = push(advertisementRef);
+
+var submit = document.getElementById('submit');
+submit.addEventListener('click', UploadProcess);
+
+//upload photo
+
+
+function UploadProcess(){
+
+    var ad_headline_one = document.getElementById('ad_headline_one').value;
+    var ad_headline_two = document.getElementById('ad_headline_two').value;
+    var ad_headline_three = document.getElementById('ad_headline_three').value;
+    var ad_category = document.getElementById('ad_category').value;
+    var ad_name = document.getElementById('ad_name').value;
+    var ad_company = document.getElementById('ad_company').value;
+    var ad_url = document.getElementById('ad_url').value;
+    var ad_goal = document.getElementById('ad_goal').value;
+    var ad_description_one = document.getElementById('ad_description_one').value;
+    var ad_description_two = document.getElementById('ad_description_two').value;
+    var ad_bidding = document.getElementById('ad_bidding').value;
+    var ad_country = document.getElementById('ad_country').value;
+    var ad_language = document.getElementById('ad_language').value;
+    var ad_budget = document.getElementById('ad_budget').value;
+  
+
+   
+
+    
+    var date = new Date().toString();
+ 
+  console.log(d);
+
+    set(newPostAdvertisements,{
+
+        Name: ad_name,
+        HeadlineOne: ad_headline_one,
+        HeadlineTwo: ad_headline_two,
+        HeadlineThree: ad_headline_three,
+        Category: ad_category,
+        Goal : ad_goal,
+        Description1: ad_description_one,
+        Description2:ad_description_two,
+        Company: ad_company,
+        Country:ad_country,
+        URL: ad_url,
+        BiddingStrategy:ad_bidding,
+        IP: ad_language,
+        Budget: ad_budget,
+        Date: date
+
+    })
+
+
+
+    Swal.fire({
+            title: "Good job!",
+            text: "Your Text advertisements has been sent for a review! Access Your Email For Ads Summary",
+            icon: "success",
+             button: "okay!",
+     });
+
+
+    console.log("data saved");
+
+
+
+    }
+
+
+
+
+
+
+
+    </script>
+
+
+<script src="../../assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="../../assets/js/feather.min.js"></script>
+
+<script src="../../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../../assets/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/js/dataTables.bootstrap4.min.js"></script>
+
+<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
+<script src="../../assets/plugins/apexchart/chart-data.js"></script>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+
+</html>

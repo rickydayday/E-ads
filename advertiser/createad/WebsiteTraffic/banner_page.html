@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="POS - Bootstrap Admin Template">
+    <meta name="keywords"
+        content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
+    <meta name="robots" content="noindex, nofollow">
+    <title>AllactionsAds || CreateAd</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../../assets/css/animate.css">
+
+    <link rel="stylesheet" href="../../assets/css/dataTables.bootstrap4.min.css">
+
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../../assets/plugins/fontawesome/css/all.min.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+</head>
+
+<style type="text/css">
+    body{
+        font-family: 'Poppins' !important;
+    }
+    h4{
+        font-size: 11px !important;
+    }
+
+    iconify-icon {
+        font-size: 60px;
+        margin-top:2rem;
+    }
+  
+</style>
+
+<body onload="getLocation();">
+    <div id="global-loader">
+        <div class="whirly-loader"> </div>
+    </div>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+
+            <div class="header-left active">
+                <a href="index.html" class="logo logo-normal">
+                    <img src="../../assets/img/s-removebg-preview.png" alt="">
+                </a>
+                <a href="index.html" class="logo logo-white">
+                    <img src="../../assets/img/logo-white.png" alt="">
+                </a>
+                <a href="index.html" class="logo-small">
+                    <img src="../../assets/img/logo-small.png" alt="">
+                </a>
+                <a id="toggle_btn" href="javascript:void(0);">
+                </a>
+            </div>
+
+            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
+                <span class="bar-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </a>
+
+            <ul class="nav user-menu">
+
+                <li class="nav-item">
+                    <div class="top-nav-search">
+                        <a href="javascript:void(0);" class="responsive-search">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <form action="#">
+                            <div class="searchinputs">
+                                <input type="text" placeholder="Search Here ...">
+                                <div class="search-addon">
+                                    <span><img src="../../assets/img/icons/closes.svg" alt="img"></span>
+                                </div>
+                            </div>
+                            <a class="btn" id="searchdiv"><img src="../../assets/img/icons/search.svg" alt="img"></a>
+                        </form>
+                    </div>
+                </li>
+
+
+                <li class="nav-item dropdown has-arrow flag-nav">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);"
+                        role="button">
+                        <img src="../../assets/img/flags/us1.png" alt="" height="20">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/us.png" alt="" height="16"> English
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/fr.png" alt="" height="16"> French
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/es.png" alt="" height="16"> Spanish
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <img src="../../assets/img/flags/de.png" alt="" height="16"> German
+                        </a>
+                    </div>
+                </li>
+
+
+             
+
+                <li class="nav-item dropdown has-arrow main-drop">
+                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
+                        <span class="user-img"><img src="../../assets/img/profiles/avator1.jpg" alt="">
+                            <span class="status online"></span></span>
+                    </a>
+                    <div class="dropdown-menu menu-drop-user">
+                        <div class="profilename">
+                            <div class="profileset">
+                                <span class="user-img"><img src="../../assets/img/profiles/avator1.jpg" alt="">
+                                    <span class="status online"></span></span>
+                                <div class="profilesets">
+                                    <h6>John Doe</h6>
+                                    <h5>Admin</h5>
+                                </div>
+                            </div>
+                            <hr class="m-0">
+                            <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My
+                                Profile</a>
+                            <a class="dropdown-item" href="generalsettings.html"><i class="me-2"
+                                    data-feather="settings"></i>Settings</a>
+                            <hr class="m-0">
+                            <a class="dropdown-item logout pb-0" href="signin.html"><img
+                                    src="../../assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+            <div class="dropdown mobile-user-menu">
+                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="profile.html">My Profile</a>
+                    <a class="dropdown-item" href="generalsettings.html">Settings</a>
+                    <a class="dropdown-item" href="signin.html">Logout</a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+                <div id="sidebar-menu" class="sidebar-menu">
+                    <ul>
+                        <li class="submenu">
+                            <a href="../../dashboard"><i class="fa fa-tachometer"></i><span>
+                                  Go To Dashboard</span> </a>
+                        </li>
+                     
+                   
+
+
+                     
+                     
+                     
+                      
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       <div class="page-wrapper">
+            <div class="content">
+                <div class="page-header">
+                    <div class="page-title">
+                        <h3>Create Banner Ads</h3>
+                     
+                    </div>
+                </div>
+
+ 
+
+
+            <form><div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h5>General Ad Information</h5>
+                              
+                            </div>
+                        </div>
+                        <div class="row">
+                       
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ad Name</label>
+                                    <input type="text" id="ad_name" required>
+                                </div>
+                            </div>
+                       
+                              <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ad Headline</label>
+                                    <input type="text" id="ad_headline" required>
+                                </div>
+                            </div>
+                               <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Brand Name</label>
+                                    <input type="text" id="ad_brand" required>
+                                </div>
+                            </div>
+
+
+                                 <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Key word</label>
+                                  <select class="form-select form-select-sm" id="ad_category" aria-label=".form-select-sm example">
+                                     <option selected>Choose</option>
+                                             <option value="Technology">Technology</option>
+                                              <option value="Housing">Housing</option>
+                                              <option value="Entertainment">Entertainment</option>
+                                             <option value="Entertainment">Betting</option>
+                                             <option value="crytpocurrency">Cryptocurrency</option>
+                                             <option value="beauty">Beauty</option>
+                                             <option value="health">Health</option>
+
+                                </select>
+                                </div>
+                            </div>
+
+
+                        
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" id="ad_phone" required>
+                                </div>
+                            </div>
+
+                      
+                        
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" id="ad_email" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" id="ad_company" required>
+                                </div>
+                            </div>
+
+
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Website URL</label>
+                                    <input type="text" id="ad_url" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Ad Description</label>
+                                    <textarea class="form-control" id="ad_description" required></textarea>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <h5>Target & Budget</h5>
+                              
+                            </div>
+
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Choose Ad Size</label>
+                                    <select class="form-select form-select-sm" id="ad_size" aria-label=".form-select-sm example">
+                                     <option selected>Choose</option>
+                                             <option value="1200 x 600px">1200 x 600px</option>
+                                              <option value="800 x 400px">800 x 400px</option>
+                                              <option value="600 x 400px">600 x 400px</option>
+                                </select>
+                                </div>
+                            </div>
+                               <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group" id="ipaddress">
+                          
+                                    
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group" id="country">
+                            
+                                    
+
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Ads Budget</label>
+                                    <select class="select" id="ad_budget">
+                                        <option value="0.60">$0.60 daily average</option>
+                                        <option value="1.70">$1.70 daily average</option>
+                                        <option value="5.00">$5.00 daily average</option>
+                                    </select>
+                                </div>
+                           
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label> Product Image</label>
+                                    <div class="image-upload">
+                                        <input id="imageUpload" type="file">
+                                        <div class="image-uploads">
+                                            <img id="output-image" src="../../assets/img/icons/upload.svg" alt="img">
+                                            <h4>Drag and drop a file to upload</h4>
+
+
+                                        </div>
+                                        <input type="text" name="" id="namebox">
+                                        <label id="extLab"></label><label id="proglab"></label>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                   
+                   
+
+                            <div class="row">
+                            <div class="col-lg-12">
+                                <a id="submit" class="btn btn-submit me-2">Submit</a>
+                                <a onclick="cancelRequest();" class="btn btn-cancel">Cancel</a>
+                            </div>
+                            </div>
+                        
+                    </div>
+                </div>
+</form>
+            </div>
+        </div>
+    </div>
+ 
+
+<script type="text/javascript">
+    function getLocation(){
+  fetch('https://api.db-ip.com/v2/free/self')
+      .then((res) => res.json())
+      .then((data) => {
+
+      console.log(data);
+        let output = `
+        <label>Advertising Country</label>
+        <input type="text" value="${data.countryName}" id="ad_country">`;
+      
+        document.getElementById('country').innerHTML = output;
+
+
+        let output2 = `
+           <label>IP Address</label>
+        <input type="text" value="${data.ipAddress}" id="ad_language">`;
+
+        ;
+         document.getElementById('ipaddress').innerHTML = output2;
+      })
+}
+
+function cancelRequest(){
+
+
+
+location.reload();
+}
+
+</script>
+
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js";
+import { getDatabase, ref, set, push, update} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+import { getStorage, ref as sRef, uploadBytesResumable,getDownloadURL} from "https://www.gstatic.com/firebasejs/9.6.8/firebase-storage.js";
+
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDEqFJs-S900pexPUDeiPc-7aRrMHhw6Ww",
+  authDomain: "e-store-a05b8.firebaseapp.com",
+  databaseURL: "https://e-store-a05b8.firebaseio.com",
+  projectId: "e-store-a05b8",
+  storageBucket: "e-store-a05b8.appspot.com",
+  messagingSenderId: "929059030724",
+  appId: "1:929059030724:web:307218980d0d2fd30b2b91",
+  measurementId: "G-46E6M68KTM"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+const storage = getStorage(app);
+var files= [];
+
+var reader = new FileReader();
+var imageUpload = document.getElementById('imageUpload');
+var extLab = document.getElementById('extLab');
+var namebox = document.getElementById('namebox');
+var proglab =document.getElementById('proglab');
+
+
+
+var submit = document.getElementById('submit');
+var storageRef = sRef(storage, 'Images');
+const advertisementRef = ref(db, 'advertisements');
+const newPostAdvertisements = push(advertisementRef);
+
+imageUpload.onchange = e =>{
+
+  files = e.target.files;
+
+  var extension = GetFileExt(files[0]);
+  var name = GetFileName(files[0]);
+  var output = document.getElementById('output-image');
+
+  output.src = URL.createObjectURL(event.target.files[0]);
+
+  output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+
+
+  namebox.value = name;
+  extLab.innerHTML= extension;
+
+  reader.readAsDataURL(files[0]);
+
+
+
+//   if (e.target.files) {
+//                 let imageVal = e.target.files[0];
+//                 var reader = new FileReader();
+//                 reader.onload = function (e) {
+//                     var img = document.createElement("img");
+//                     img.onload = function (event) {
+//                         // This line is dynamically creating a canvas element
+//                         var canvas = document.createElement("canvas");
+
+
+                      
+//                         var ctx = canvas.getContext("2d");
+
+
+//                         //This line shows the actual resizing of image
+//                         ctx.drawImage(img, 0, 0, 400, 350);
+
+
+//                         //This line is used to display the resized image in the body
+//                         var url = canvas.toDataURL(imageVal.type);
+//                         document.getElementById("img-content").src = url;
+//                     }
+//                     img.src = e.target.result;
+//                 }
+//                 reader.readAsDataURL(imageVal);
+//             }
+
+
+
+} 
+
+
+
+function GetFileExt(file){
+    var temp= file.name.split('.');
+    var ext = temp.slice((temp.length-1),(temp.length));
+    return '.' +ext[0];
+
+}
+
+function GetFileName(file){
+    var temp = file.name.split('.');
+    var fname = temp.slice(0,-1).join('.');
+    return fname;
+}
+
+
+//upload photo
+
+
+function UploadProcess(e){
+e.preventDefault();
+    var ad_name = document.getElementById('ad_name').value;
+        var ad_headline = document.getElementById('ad_headline').value;
+    var ad_brand = document.getElementById('ad_brand').value;
+    var ad_category = document.getElementById('ad_category').value;
+    var ad_phone = document.getElementById('ad_phone').value;
+    var ad_email = document.getElementById('ad_email').value;
+    var ad_company = document.getElementById('ad_company').value;
+    var ad_url = document.getElementById('ad_url').value;
+    var ad_size = document.getElementById('ad_size').value;
+    var ad_description = document.getElementById('ad_description').value
+    var ad_language = document.getElementById('ad_language').value;
+    var ad_country = document.getElementById('ad_country').value;
+    var ad_budget = document.getElementById('ad_budget').value;
+    var date = new Date().toString();
+ 
+  console.log(date);
+
+    set(newPostAdvertisements,{
+
+        Name: ad_name,
+        Headline: ad_headline,
+        Brand: ad_brand,
+        Category: ad_category,
+        Phone : ad_phone,
+        Email: ad_email,
+        Description:ad_description,
+        Company: ad_company,
+        Country:ad_country,
+        URL: ad_url,
+        Pixels : ad_size,
+        IP: ad_language,
+        Budget: ad_budget,
+        Date: date
+
+    })
+
+
+
+    Swal.fire({
+            title: "Good job!",
+            text: "Your advertisements has been sent for a review!",
+            icon: "success",
+             button: "okay!",
+     });
+
+
+    console.log("data saved");
+
+
+    var ImgToUpload = files[0];
+    var Image = namebox.value + extLab.innerHTML;
+
+    const metaData = {
+        contentType:ImgToUpload.type
+      }
+
+    const UploadTask = uploadBytesResumable(storageRef,ImgToUpload, metaData)
+
+     UploadTask.on('state-changed',(snapshot)=>{
+        var progess = (snapshot.bytesTransferred / snapshot.total * 100);
+        proglab.innerHTML = "Upload" + progess + "%";
+    },
+
+    (error)=>{
+        alert("error");
+    },
+
+    () => {
+        getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+             SaveToRealTimeDatabase(downloadURL);
+        });
+
+    });
+
+
+
+
+}
+
+
+   function SaveToRealTimeDatabase(URL){
+    var name = namebox.value;
+    var ext = extLab.innerHTML;
+
+    set(ref(db, "imagelinks/" +name),{
+
+        imageName :(name+ext),
+        ImgUrl: URL,
+        AdUrl:ad_url,
+        AdHeadline:ad_headline   
+    });
+}
+
+
+function GetUrlFromRealtimeDB(){
+    var name = namebox.value;
+    var dbRef = ref(db);
+
+    get(child(dbref,'imagelinks/' +namebox)).then((snapshot)=>{
+        if(snapshot.exists()){
+            myImg.src= snapshot.val().ImgUrl;
+        }
+    })
+}
+
+submit.onclick= UploadProcess;
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+<script src="../../assets/js/jquery-3.6.0.min.js"></script>
+
+<script src="../../assets/js/feather.min.js"></script>
+
+<script src="../../assets/js/jquery.slimscroll.min.js"></script>
+
+<script src="../../assets/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/js/dataTables.bootstrap4.min.js"></script>
+
+<script src="../../assets/js/bootstrap.bundle.min.js"></script>
+
+<script src="../../assets/plugins/apexchart/apexcharts.min.js"></script>
+<script src="../../assets/plugins/apexchart/chart-data.js"></script>
+
+<script src="../../assets/js/script.js"></script>
+</body>
+
+</html>
